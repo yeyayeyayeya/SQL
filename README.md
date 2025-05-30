@@ -1,17 +1,38 @@
-🗃️ Bài Tập Thực Hành Cơ Sở Dữ Liệu
-Đây là tập hợp các bài tập thực hành môn Cơ Sở Dữ Liệu, được xây dựng nhằm giúp sinh viên nắm vững các khái niệm và kỹ năng cốt lõi trong việc thiết kế, quản lý và truy vấn cơ sở dữ liệu quan hệ. Thông qua các tình huống mô phỏng thực tế như quản lý chuyến bay, nhân sự, sản phẩm, đơn hàng,... các bài tập giúp rèn luyện:
+# 📊 Relational Database Practice Projects
 
-- Tạo và thiết kế lược đồ cơ sở dữ liệu chuẩn hóa.
+This repository contains a collection of structured SQL exercises designed to model and solve real-world database scenarios. The problems focus on airline operations, flight scheduling, employee management, aircraft range limitations, and pilot certifications. These exercises were developed as part of my data engineering learning path, demonstrating my ability to write complex SQL queries and reason through business logic using relational databases.
 
-- Viết truy vấn SQL từ cơ bản đến nâng cao (SELECT, JOIN, GROUP BY, HAVING, SUBQUERY, EXISTS...).
+---
 
-- Phân tích dữ liệu và kiểm tra logic nghiệp vụ.
+## 🚀 What This Project Covers
 
-- Hiểu rõ mối quan hệ giữa thực thể (entity) và ràng buộc dữ liệu (constraints).
+- **Relational Schema Design**: Normalized data structures (1NF, 2NF, 3NF)
+- **SQL Querying**: 
+  - `JOIN`, `GROUP BY`, `HAVING`, `IN`, `NOT EXISTS`, nested subqueries
+  - Aggregate functions and conditional filtering
+- **Business Logic**:
+  - Matching aircraft range to flight distance
+  - Verifying pilot certification against aircraft types
+  - Filtering by salary conditions, airport routes, and flight capabilities
+- **Use Cases**:
+  - Find pilots who can fly all Boeing aircraft
+  - Determine which aircraft can fly specific flight paths
+  - Identify flights only qualified for high-salary pilots
 
-Mỗi bài tập là một tình huống cụ thể với yêu cầu rõ ràng, giúp người học làm quen với tư duy phân tích dữ liệu trong hệ thống thực tế.
+---
 
-📚 Dành cho sinh viên luyện tập và ôn thi các học phần liên quan đến hệ quản trị cơ sở dữ liệu (SQL-based RDBMS).
+## 📁 Project Structure
+
+📁 SQL/
+├── HANGKHONG.sql       # Airline management database exercises
+├── QLDIEM.sql          # Student grade management system
+├── QL_DEAN.sql         # Project assignment management
+├── QL_SINHVIEN.sql     # Student information management
+└── README.md           # Project overview and instructions
+
+---
+
+📚 Designed for students to practice and review topics related to SQL-based relational database management systems (RDBMS).
 
 Bài tập 2. Quản lý đề án công ty
 NHANVIEN(HONV, TENLOT, TENNV, MANV, NGSINH, DCHI, PHAI, LUONG, MA_NQL, PHG)
