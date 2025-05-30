@@ -1,3 +1,17 @@
+🗃️ Bài Tập Thực Hành Cơ Sở Dữ Liệu
+Đây là tập hợp các bài tập thực hành môn Cơ Sở Dữ Liệu, được xây dựng nhằm giúp sinh viên nắm vững các khái niệm và kỹ năng cốt lõi trong việc thiết kế, quản lý và truy vấn cơ sở dữ liệu quan hệ. Thông qua các tình huống mô phỏng thực tế như quản lý chuyến bay, nhân sự, sản phẩm, đơn hàng,... các bài tập giúp rèn luyện:
+
+- Tạo và thiết kế lược đồ cơ sở dữ liệu chuẩn hóa.
+
+- Viết truy vấn SQL từ cơ bản đến nâng cao (SELECT, JOIN, GROUP BY, HAVING, SUBQUERY, EXISTS...).
+
+- Phân tích dữ liệu và kiểm tra logic nghiệp vụ.
+
+- Hiểu rõ mối quan hệ giữa thực thể (entity) và ràng buộc dữ liệu (constraints).
+
+Mỗi bài tập là một tình huống cụ thể với yêu cầu rõ ràng, giúp người học làm quen với tư duy phân tích dữ liệu trong hệ thống thực tế.
+
+📚 Dành cho sinh viên luyện tập và ôn thi các học phần liên quan đến hệ quản trị cơ sở dữ liệu (SQL-based RDBMS).
 
 Bài tập 2. Quản lý đề án công ty
 NHANVIEN(HONV, TENLOT, TENNV, MANV, NGSINH, DCHI, PHAI, LUONG, MA_NQL, PHG)
