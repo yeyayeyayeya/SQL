@@ -75,6 +75,7 @@ VALUES
 ('Tran', 'Thanh', 'Tam', '453453453', '31/07/1962', '543 Mai Thi Lua, Q1, TPHCM', 'Nam', 25000, '333445555', '5'),
 ('Tran', 'Hong', 'Quan', '987987987', '29/03/1959', '980 Le Hong Phong, Q10, TPHCM', 'Nam', 25000, '987654321', '4'),
 ('Vuong', 'Ngoc', 'Quyen', '888665555', '10/10/1927', '450 Trung Vuong, Ha Noi', 'Nu', 55000, null , '1')
+
 SET DATEFORMAT DMY
 INSERT INTO THANNHAN
 VALUES
@@ -244,8 +245,7 @@ FROM NHANVIEN K1
  JOIN DEAN K3 ON K2.SODA=K3.MADA
 WHERE K3.PHONG='5'
 
- --17. Cho biết những nhân viên tham gia tất cả đề án mà có nhân viên
- --'987654321' tham gia
+ --17. Cho biết những nhân viên tham gia tất cả đề án mà có nhân viên '987654321' tham gia
 SELECT *
 FROM NHANVIEN K1
 JOIN PHANCONG K2 ON K1.MANV =K2.MA_NVIEN
