@@ -1,1 +1,9 @@
+# Core ETL dependencies
 pandas
+pyodbc
+sqlalchemy
+psycopg2
+
+# Testing
+pytest
+pytest-mock
