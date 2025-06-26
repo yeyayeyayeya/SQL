@@ -1,0 +1,5 @@
+# Ignore Visual Studio config folder
+.vs/
+
+# Ignore airline SQL script (if not meant to track)
+HANGKHONG.sql
