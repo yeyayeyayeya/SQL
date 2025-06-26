@@ -56,6 +56,12 @@ git checkout student-grade-management
 
 2. 📦 Install dependencies
 ```bash
+# For main ETL pipeline (production use)
+pip install -r requirements.txt
+
+# For development & testing environment:
+pip install -r requirements-dev.txt
+```bash
 pip install -r requirements.txt
 
 # Or manually install if requirements.txt is not available:
@@ -107,4 +113,3 @@ The ETL pipeline will:
 - ⏰ Automate the pipeline using cron jobs or pgAgent
 - 🔐 Move database credentials to .env file for security
 - 📦 Package the ETL as a reusable Python module or CLI tool
-
