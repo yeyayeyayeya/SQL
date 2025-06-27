@@ -34,14 +34,18 @@ This project simulates a real-world student grade management system where you:
 ## 📂 Project Structure
 
 student-grade-management/
-├── etl.py # Main ETL script
-├── config.py.example # Sample config (hide real credentials)
-├── requirements.txt # Python dependencies
+├── etl.py                  # Main ETL script
+├── migrate_all.py          # Optional: Copy source tables to PostgreSQL
+├── config.py.example       # Sample config (hide real credentials)
+├── requirements.txt        # Python dependencies
+├── requirements-dev.txt    # Dev/test dependencies
+├── schema_postgres.sql     # PostgreSQL-compatible schema
+├── schema_mssql.sql        # SQL Server-compatible schema
 ├── data/
-│ └── output.csv # Final report after transformation
-├── schema.sql # SQL scripts to create original tables (optional)
-└── README.md # You're reading it!
-
+│   └── output.csv          # Final report after transformation
+├── tests/
+│   └── test_etl.py         # Unit tests for ETL pipeline
+└── README.md               # You're reading it!
 
 ---
 
@@ -61,30 +65,22 @@ pip install -r requirements.txt
 
 # For development & testing environment:
 pip install -r requirements-dev.txt
-```bash
-pip install -r requirements.txt
-
-# Or manually install if requirements.txt is not available:
-pip install pandas pyodbc sqlalchemy psycopg2
 ```
 
 3. ⚙️ Configure database connections
+Create a `config.py` file based on the sample:
 ```python
-# Open config.py and fill in your own connection details
-
 SQL_SERVER_CONN_STR = (
     "DRIVER={ODBC Driver 17 for SQL Server};"
     "SERVER=YOUR_SQL_SERVER_NAME\\INSTANCE;"  # Replace with your actual SQL Server
     "DATABASE=YOUR_SQL_DATABASE;"
     "Trusted_Connection=yes;"  # Use this if connecting via Windows Authentication
-# If using SQL Server Authentication instead, replace with:
-# UID=your_username;PWD=your_password;"
+    # Or use SQL Server Authentication:
+    # "UID=your_username;PWD=your_password;"
 )
 
-POSTGRES_CONN_STR = "postgresql+psycopg2://your_user:your_password@localhost:5432/YOUR_POSTGRES_DB" 
-# Replace with your actual password and POSTGRES DB
+POSTGRES_CONN_STR = "postgresql+psycopg2://your_user:your_password@localhost:5432/YOUR_POSTGRES_DB"
 ```
-
 > 🔐 Important: Avoid committing actual credentials. Use environment variables or a `.env` file in production.
 
 4. 🚀 Run the ETL pipeline
@@ -93,12 +89,18 @@ python etl.py
 ```
 
 The ETL pipeline will:
-- ✅ Extract data from SQL Server
+- ✅ Extract data from SQL Server (`DMSV`, `DMMH`, `KETQUA`)
 - ✅ Calculate GPA and classify academic performance
-- ✅ Load the result into PostgreSQL table `bang_tong_hop`
-- ✅ Export to CSV file at `D:/DB/output.csv`
+- ✅ Merge into final report
+- ✅ Load into PostgreSQL as `bang_tong_hop`
+- ✅ Export to CSV at `D:/DB/output.csv`
 
-5. ✅ Sample Output
+5. 🔄 (Optional) Migrate all source tables to PostgreSQL
+```bash
+python migrate_all.py
+```
+
+6. ✅ Sample Output
 ```
 | MaSV | HoTen           | MaMH | TenMH      | Diem | LanThi | GPA  | XepLoai     |
 |------|------------------|------|------------|------|--------|------|-------------|
@@ -107,9 +109,21 @@ The ETL pipeline will:
 | 003  | Tran Minh Cuong  | MH03 | Chemistry  | 7.0  | 2      | 7.50 | Good         |
 ```
 
-6. 📈 Future Improvements
-- ➕ Add unit tests for GPA calculation and ranking
-- 📊 Connect to Metabase or Power BI for dashboarding
-- ⏰ Automate the pipeline using cron jobs or pgAgent
-- 🔐 Move database credentials to .env file for security
-- 📦 Package the ETL as a reusable Python module or CLI tool
+7. 🧪 Run Unit Tests
+```bash
+pytest tests/test_etl.py
+```
+Tests include:
+- ✅ Extraction from SQL Server
+- ✅ GPA and ranking logic
+- ✅ Column name validation
+- ✅ Transformation correctness
+- ✅ PostgreSQL data load
+- ✅ Full ETL pipeline execution
+
+8. 📈 Future Improvements
+- ➕ Add more test coverage (e.g. null handling, edge cases)
+- 📊 Connect to Metabase or Power BI for dashboard visualization
+- ⏰ Automate with cron jobs or pgAgent
+- 🔐 Move credentials to `.env` file for better security
+- 📦 Package ETL into a reusable module or CLI tool
