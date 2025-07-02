@@ -44,6 +44,34 @@ constraint FK_KETQUA_SV foreign key(MaSV) references DMSV(MaSV),
 constraint FK_KETQUA_DMMH foreign key (MaMH) references DMMH(MaMH),
 )
 
+CREATE TABLE DMGV (
+    MAGV NVARCHAR(10) NOT NULL PRIMARY KEY,
+    HOTENGV NVARCHAR(50) NOT NULL,
+    MAKH NVARCHAR(10) NOT NULL,
+    FOREIGN KEY (MAKH) REFERENCES DMKHOA(MAKH)
+)
+
+CREATE TABLE UserLogins (
+    Id uniqueidentifier PRIMARY KEY,
+    StudentId nvarchar(10),
+    LoginTime datetime,
+    Role nvarchar(10),
+    IPAddress nvarchar(50),
+    DeviceInfo nvarchar(100)
+);
+
+CREATE TABLE ScoreUpdates (
+    Id uniqueidentifier PRIMARY KEY,
+    StudentId nvarchar(10),
+    SubjectId nvarchar(10),
+    OldScore float,
+    NewScore float,
+    UpdatedAt datetime,
+    UpdatedBy nvarchar(10),
+    UpdatedByName nvarchar(100),
+    Note nvarchar(200)
+);
+
 insert into DMKHOA
 values
 ('AV', N'Anh Văn'),
