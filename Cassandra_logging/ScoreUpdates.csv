@@ -1,0 +1,3 @@
+﻿Id,StudentId,SubjectId,OldScore,NewScore,UpdatedAt,UpdatedBy,UpdatedByName,Note
+5c4a88e5-6e76-4a8e-8ef9-2b9fbe6f9d21,A010,MH01,7.5,8.5,2025-06-30 10:30:00,G01,Nguyễn Thị Hải,Tăng điểm cuối kỳ
+12c2a9de-5a3e-4dd2-bb41-883b5d2645a7,A011,MH02,6.0,7.0,2025-06-30 11:00:00,G010,Wilson Lori,Chấm lại bài kiểm tra
