@@ -1,10 +1,10 @@
-# 🎓 Student Grade Management – ETL Pipeline
+# Student Grade Management – ETL Pipeline
 
 An end-to-end ETL pipeline built using **Python**, which extracts student data from **SQL Server**, transforms it to calculate GPA and academic ranking, and loads it into a **PostgreSQL** data warehouse. The result is also exported as a CSV file, which can be used for reporting and dashboarding.
 
 ---
 
-## ✨ Project Overview
+## Project Overview
 
 This project simulates a real-world student grade management system where you:
 
@@ -20,7 +20,7 @@ This project simulates a real-world student grade management system where you:
 
 ---
 
-## 🧱 Technologies Used
+## Technologies Used
 
 - **Python 3.10+**
 - **pandas** for data transformation
@@ -31,7 +31,7 @@ This project simulates a real-world student grade management system where you:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 student-grade-management/
 ├── etl.py                  # Main ETL script
@@ -49,16 +49,16 @@ student-grade-management/
 
 ---
 
-## 🔧 Setup Instructions
+## Setup Instructions
 
-1. 📥 Clone the repository
+1. Clone the repository
 ```bash
 git clone https://github.com/yeyayeyayeya/SQL.git
 cd SQL
 git checkout student-grade-management
 ```
 
-2. 📦 Install dependencies
+2. Install dependencies
 ```bash
 # For main ETL pipeline (production use)
 pip install -r requirements.txt
@@ -67,7 +67,7 @@ pip install -r requirements.txt
 pip install -r requirements-dev.txt
 ```
 
-3. ⚙️ Configure database connections
+3. Configure database connections
 Create a `config.py` file based on the sample:
 ```python
 SQL_SERVER_CONN_STR = (
@@ -81,26 +81,26 @@ SQL_SERVER_CONN_STR = (
 
 POSTGRES_CONN_STR = "postgresql+psycopg2://your_user:your_password@localhost:5432/YOUR_POSTGRES_DB"
 ```
-> 🔐 Important: Avoid committing actual credentials. Use environment variables or a `.env` file in production.
+> Important: Avoid committing actual credentials. Use environment variables or a `.env` file in production.
 
-4. 🚀 Run the ETL pipeline
+4. Run the ETL pipeline
 ```bash
 python etl.py
 ```
 
 The ETL pipeline will:
-- ✅ Extract data from SQL Server (`DMSV`, `DMMH`, `KETQUA`)
-- ✅ Calculate GPA and classify academic performance
-- ✅ Merge into final report
-- ✅ Load into PostgreSQL as `bang_tong_hop`
-- ✅ Export to CSV at `D:/DB/output.csv`
+- Extract data from SQL Server (`DMSV`, `DMMH`, `KETQUA`)
+- Calculate GPA and classify academic performance
+- Merge into final report
+- Load into PostgreSQL as `bang_tong_hop`
+- Export to CSV at `D:/DB/output.csv`
 
-5. 🔄 (Optional) Migrate all source tables to PostgreSQL
+5. (Optional) Migrate all source tables to PostgreSQL
 ```bash
 python migrate_all.py
 ```
 
-6. ✅ Sample Output
+6. Sample Output
 ```
 | MaSV | HoTen           | MaMH | TenMH      | Diem | LanThi | GPA  | XepLoai     |
 |------|------------------|------|------------|------|--------|------|-------------|
@@ -109,21 +109,21 @@ python migrate_all.py
 | 003  | Tran Minh Cuong  | MH03 | Chemistry  | 7.0  | 2      | 7.50 | Good         |
 ```
 
-7. 🧪 Run Unit Tests
+7. Run Unit Tests
 ```bash
 pytest tests/test_etl.py
 ```
 Tests include:
-- ✅ Extraction from SQL Server
-- ✅ GPA and ranking logic
-- ✅ Column name validation
-- ✅ Transformation correctness
-- ✅ PostgreSQL data load
-- ✅ Full ETL pipeline execution
+- Extraction from SQL Server
+- GPA and ranking logic
+- Column name validation
+- Transformation correctness
+- PostgreSQL data load
+- Full ETL pipeline execution
 
-8. 📈 Future Improvements
-- ➕ Add more test coverage (e.g. null handling, edge cases)
-- 📊 Connect to Metabase or Power BI for dashboard visualization
-- ⏰ Automate with cron jobs or pgAgent
-- 🔐 Move credentials to `.env` file for better security
-- 📦 Package ETL into a reusable module or CLI tool
+8. Future Improvements
+- Add more test coverage (e.g. null handling, edge cases)
+- Connect to Metabase or Power BI for dashboard visualization
+- Automate with cron jobs or pgAgent
+- Move credentials to `.env` file for better security
+- Package ETL into a reusable module or CLI tool
