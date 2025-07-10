@@ -1,10 +1,10 @@
-# 📊 Relational Database Practice Projects
+# Relational Database Practice Projects
 
 This repository contains a collection of structured SQL exercises designed to model and solve real-world database scenarios. The problems focus on airline operations, flight scheduling, employee management, aircraft range limitations, and pilot certifications. These exercises were developed as part of my data engineering learning path, demonstrating my ability to write complex SQL queries and reason through business logic using relational databases.
 
 ---
 
-## 🚀 What This Project Covers
+## What This Project Covers
 
 - **Relational Schema Design**: Normalized data structures (1NF, 2NF, 3NF)
 - **SQL Querying**: 
@@ -31,8 +31,7 @@ This repository contains a collection of structured SQL exercises designed to mo
 └── README.md           # Project overview and instructions
 
 ---
-
-📚 Designed for students to practice and review topics related to SQL-based relational database management systems (RDBMS).
+ Designed for students to practice and review topics related to SQL-based relational database management systems (RDBMS).
 
 Bài tập 2. Quản lý đề án công ty
 NHANVIEN(HONV, TENLOT, TENNV, MANV, NGSINH, DCHI, PHAI, LUONG, MA_NQL, PHG)
