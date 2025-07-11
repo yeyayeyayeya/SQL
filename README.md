@@ -34,7 +34,7 @@ This branch is an extension of the existing student management system project. I
 
 ## Branch information
 
-This code is maintained in a separate branch named `feature/cassandra-logs`. It extends the original student management system but does not modify the main student or course tables. Instead, it adds additional functionality for logging and monitoring.
+This code is maintained in a separate branch named `cassandra-logs`. It extends the original student management system but does not modify the main student or course tables. Instead, it adds additional functionality for logging and monitoring.
 
 ## Usage
 
